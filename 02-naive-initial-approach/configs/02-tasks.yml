@@ -1,0 +1,5 @@
+job_search:
+  description: |
+    find a list jobs that fulfill the following requirements: {query}
+  expected_output: A structured output as a valid json with the list of jobs found with all their information. Make sure that field names are kept the same.
+

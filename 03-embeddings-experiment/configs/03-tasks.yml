@@ -1,0 +1,11 @@
+job_loader:
+  description: Load job descriptions from JSON files.
+  expected_output: A list of job descriptions.
+  "parameters": {
+    "folder_path": "./jobs"
+  }
+job_search:
+  description: |
+    search for jobs that fulfill the following requirements: {query} in the Job title of job files found in a directory. use the directory tool to find all job files
+  expected_output: A structured output as a valid json with the list of jobs found with all their information. Make sure that field names are kept the same.
+
