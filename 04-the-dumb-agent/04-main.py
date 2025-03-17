@@ -43,9 +43,9 @@ class FetchJobsOutput(BaseModel):
 
 
 class FetchJobsTool(BaseTool):
-    name: str = "Fetch Latest Videos for Channel"
+    name: str = "Fetch job descriptions from the jobs folder"
     description: str = (
-        "Fetches the latest videos for a specified YouTube channel handle."
+        "Fetches all the job descriptions from the jobs folder and return a list of all jobs."
     )
     args_schema: Type[BaseModel] = FetchJobsInput
     return_schema: Type[BaseModel] = FetchJobsOutput
@@ -54,7 +54,7 @@ class FetchJobsTool(BaseTool):
         self,
         directory: str,
     ) -> FetchJobsOutput:
-        dir = "./jobs"
+        dir = "jobs"
         jobs = []
         for file_name in os.listdir(dir):
             if file_name.endswith(".json"):
